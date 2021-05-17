@@ -43,45 +43,6 @@
 - no way
 - not really
 
-## intent: mood_great
-- perfect
-- great
-- amazing
-- feeling like a king
-- wonderful
-- I am feeling very good
-- I am great
-- I am amazing
-- I am going to save the world
-- super stoked
-- extremely good
-- so so perfect
-- so good
-- so perfect
-
-## intent: mood_unhappy
-- my day was horrible
-- I am sad
-- I don't feel very well
-- I am disappointed
-- super sad
-- I'm so sad
-- sad
-- very sad
-- unhappy
-- not good
-- not very good
-- extremly sad
-- so saad
-- so sad
-
-## intent: bot_challenge
-- are you a bot?
-- are you a human?
-- am I talking to a bot?
-- am I talking to a human? 
-
-
 ## intent: age
 - 8
 - 10
@@ -116,3 +77,8 @@
 - you@yourdomain.com
 - jldjiej138@outlook.com
 - jingyih@student.unimelb.edu.au
+
+## intent: feedback
+- very helpful
+- somewhat helpful
+- not helpful

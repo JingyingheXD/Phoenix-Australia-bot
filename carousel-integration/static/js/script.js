@@ -1,6 +1,18 @@
 // const BOT_SERVER =  "http://45.113.232.11/"; //'http://localhost:5005/';
 const BOT_SERVER = 'http://localhost:5005';
 const DEFAULT_BOT_TYPE = 'A'
+const marked = window.marked;
+
+var renderer = new marked.Renderer();
+renderer.link = function (href, title, text){
+    return `<a target="_blank" href="${href}">${text}` + '</a>';
+};
+renderer.paragraph = function (text) {
+    return `<p class='botMsg'>${text}</p>`;
+};
+marked.setOptions({
+    renderer: renderer,
+});
 
 console.log('connecting to: ' + BOT_SERVER);
 
@@ -270,7 +282,11 @@ function setBotResponse(response) {
 
                 //check if the response contains "text"
                 if (response[i].hasOwnProperty("text")) {
-                    var BotResponse = '<img class="botAvatar" src="./static/img/sara_avatar.png"/><p class="botMsg">' + response[i].text + '</p><div class="clearfix"></div>';
+                    var content = marked(
+                        response[i].text
+                    );
+                    console.log('content: ', content);
+                    var BotResponse = '<img class="botAvatar" src="./static/img/sara_avatar.png"/>' + content + '<div class="clearfix"></div>';
                     $(BotResponse).appendTo(".chats").hide().fadeIn(1000);
                 }
 

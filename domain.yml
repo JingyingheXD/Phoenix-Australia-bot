@@ -6,6 +6,7 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - feedback
 
 slots:
   question:
@@ -52,16 +53,12 @@ slots:
     initial_value: 0.0
   email:
     type: text
-
+  further_test:
+    type: text
+  feedback:
+    type: text
   
   
-  
-  
-  
-  
-  
-  
-
 responses:
   utter_greet:
   - text: "Hey! How are you?"
