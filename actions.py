@@ -85,12 +85,11 @@ class PTSDHelperAction(Action):
         elif question == 'q_practitioner_ptsd':
             if latest_message == 'affirm':
                 dispatcher.utter_message(
-                    text="Here are some resources about PTSD and some treaments may help PTSD patients recover.")
-                dispatcher.utter_message(       # add recommendations
-                    text="[1. PTSD guideline - Children and adolescents](https://www.phoenixaustralia.org/wp-content/uploads/2020/07/Chapter-3.-Children-and-adolescents.pdf)" +
-                    "\n[2. PTSD guideline - Interventions](https://www.phoenixaustralia.org/wp-content/uploads/2020/07/Chapter-4.-Interventions.pdf)" +
-                    "\n[3. PTSD guideline - Treatment recommendations](https://www.phoenixaustralia.org/wp-content/uploads/2020/07/Chapter-6.-Treatment-recommendations.pdf)" +
-                    "\n[4. PTSD guideilne - Special populations](https://www.phoenixaustralia.org/wp-content/uploads/2020/07/Chapter-9-1-Aboriginal-and-Torres-Strait-Islander-Peoples-1.pdf)")
+                    text="Here are some resources about PTSD and some treaments may help PTSD patients recover.")       # add recommendations
+                dispatcher.utter_message(text="[PTSD guideline - Children and adolescents](https://www.phoenixaustralia.org/wp-content/uploads/2020/07/Chapter-3.-Children-and-adolescents.pdf)")
+                dispatcher.utter_message(text="[PTSD guideline - Interventions](https://www.phoenixaustralia.org/wp-content/uploads/2020/07/Chapter-4.-Interventions.pdf)")
+                dispatcher.utter_message(text="[PTSD guideline - Treatment recommendations](https://www.phoenixaustralia.org/wp-content/uploads/2020/07/Chapter-6.-Treatment-recommendations.pdf)")
+                dispatcher.utter_message(text="[PTSD guideilne - Special populations](https://www.phoenixaustralia.org/wp-content/uploads/2020/07/Chapter-9-1-Aboriginal-and-Torres-Strait-Islander-Peoples-1.pdf)")
                 return []
             elif latest_message == 'deny':
                 dispatcher.utter_message(
@@ -98,12 +97,10 @@ class PTSDHelperAction(Action):
                 return []
         elif question == 'q_yourself_ptsd':
             if latest_message == 'deny':
-                dispatcher.utter_message(
-                    text="Here are some recommendations and resources for you to treat PTSD.")
-                dispatcher.utter_message(       # give recommendation
-                    text="[1. PTSD guideline - Children and adolescents](https://www.phoenixaustralia.org/wp-content/uploads/2020/07/Chapter-3.-Children-and-adolescents.pdf)" +
-                    "\n[2. PTSD guideline - Treatment recommendations](https://www.phoenixaustralia.org/wp-content/uploads/2020/07/Chapter-6.-Treatment-recommendations.pdf)" +
-                    "\n[3. PTSD guideilne - Special populations](https://www.phoenixaustralia.org/wp-content/uploads/2020/07/Chapter-9-1-Aboriginal-and-Torres-Strait-Islander-Peoples-1.pdf)")
+                dispatcher.utter_message(text="Here are some recommendations and resources for you to treat PTSD.")       # give recommendation
+                dispatcher.utter_message(text="[PTSD guideline - Children and adolescents](https://www.phoenixaustralia.org/wp-content/uploads/2020/07/Chapter-3.-Children-and-adolescents.pdf)")
+                dispatcher.utter_message(text="[PTSD guideline - Treatment recommendations](https://www.phoenixaustralia.org/wp-content/uploads/2020/07/Chapter-6.-Treatment-recommendations.pdf)")
+                dispatcher.utter_message(text="[PTSD guideilne - Special populations](https://www.phoenixaustralia.org/wp-content/uploads/2020/07/Chapter-9-1-Aboriginal-and-Torres-Strait-Islander-Peoples-1.pdf)")
                 return []
             elif latest_message == 'affirm': 
                 dispatcher.utter_message(
@@ -151,7 +148,7 @@ class PTSDHelperAction(Action):
                 dispatcher.utter_message(
                     text="It seems that you may show some symptoms of PTSD.")
                 dispatcher.utter_message(
-                    text="To help you better, I will need to ask you a few more questions that will help me give you a moreaccurate recommendation. It may take about 3 minutes. Is that OK?", buttons=buttons)
+                    text="To help you better, I will need to ask you a few more questions that will help me give you a more accurate recommendation. It may take about 3 minutes. Is that OK?", buttons=buttons)
                 return [SlotSet('question', 'q_further_test')]
         elif question == 'q_further_test':
             further_test_input = tracker.latest_message['text'] 
